@@ -4,17 +4,18 @@
   <img width="860" src="screens/ukiyo-1.png">
 </p>
 
-**Ukiyo** is my beautiful fucking development environment.
+**Ukiyo** is a beautiful fucking development environment.
 
 Run `./ukiyo` and smoke a cigarette.
 
 ## What is this?
-**Ukiyo** assumes you understand that **Visual Studio Code + iTerm** is the best development combo, and that you want one perfect fucking bootstrap script to setup everything on a new MacOS dev machine. It is a small shell script that uses [mackup](https://github.com/lra/mackup) and is the seed for the perfect development experience on MacOS.
-
+**Ukiyo** assumes you understand that **Visual Studio Code + iTerm** is the best development combo, and that you want one perfect fucking bootstrap script to set up everything configuration-related on a new MacOS (tested on Mojave) dev machine. It is a small shell script that uses [mackup](https://github.com/lra/mackup) and is the seed for the perfect development experience on MacOS.
 
 Run this fucking script, smoke a cigarette, and come back to your new dev environment. Realize how awesome it is to type `backup` in a terminal on one machine, go to another machine and run `./ukiyo` and see the exact same shit.
 
 **Ukiyo** includes classy, utilitarian defaults like powerlined **tmux** and **vim**, `pyenv` + `n`, et al. installed through `brew`. Ukiyo Dark is based on [Kay Dark](https://marketplace.visualstudio.com/items?itemName=kube.theme-kay).
+
+**Note:** This will overwrite your existing dev configuration without prompting. Please backup everything you want to keep.
 
 ## Syncs by default
 

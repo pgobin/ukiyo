@@ -3,9 +3,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = PGobz
-	email = p.gobin@gmail.com
 [http]
 	sslVerify = false
 [alias]
