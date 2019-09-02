@@ -1,0 +1,21 @@
+{
+  "name": "theme-ukiyo",
+  "version": "1.0.0",
+  "description": "Moe kinda",
+  "publisher": "gobin",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+          "label": "Ukiyo Dark",
+          "uiTheme": "vs-dark",
+          "path": "./themes/Dark.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+BASEDIR=$(dirname "$0")
+
+echo -e "\n\nInstalling Ukiyo...\n\n"
+xcode-select -p 1>/dev/null
+
+if [ $? -ne 0 ]; then
+  xcode-select --install
+fi
+
+if ! [ -x "$(command -v brew)" ]; then
+  /usr/bin/ruby -e "$(curl -fsSL \
+    https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+brew install pyenv
+yes n | pyenv install 3.7.4
+pyenv global 3.7.4
+brew install mackup
+mackup -f restore
+brew bundle --file=~/Brewfile
+n lts
+pip install --upgrade pip
+pip install powerline-status
+cp $BASEDIR/fonts/SFMono-Light-Nerd.otf ~/Library/Fonts
+
+echo -e "\n\n\x1b[37m"
+figlet -f $BASEDIR/fonts/Calvin\ S.flf UKIYO
+echo -e "\x1b[37m☳ \x1b[36mdev//environment\n\n\n\x1b[37m"
