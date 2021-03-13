@@ -1,0 +1,171 @@
+{
+	"name": "vscode-commands",
+	"displayName": "Commands",
+	"description": "Trigger arbitrary commands from the statusbar. Supports passing arguments!",
+	"icon": "resources/logo-128x128.png",
+	"version": "1.4.1",
+	"license": "MIT",
+	"main": "out/extension.js",
+	"publisher": "fabiospampinato",
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Commands - Configuration",
+			"properties": {
+				"commands.commands": {
+					"type": "array",
+					"description": "Commands to add to the statusbar",
+					"default": [],
+					"items": {
+						"defaultSnippets": [
+							{
+								"body": {
+									"command": "workbench.action.files.newUntitledFile",
+									"text": "$(file-code) New file",
+									"tooltip": "New file"
+								}
+							}
+						],
+						"properties": {
+							"alignment": {
+								"description": "Should the item be placed to the left or right?",
+								"enum": [
+									"left",
+									"right"
+								],
+								"type": "string"
+							},
+							"arguments": {
+								"description": "Arguments to pass to the command handler",
+								"type": "array"
+							},
+							"color": {
+								"default": "#FFCC00",
+								"description": "The foreground color for this item",
+								"format": "color-hex"
+							},
+							"command": {
+								"description": "Command to execute",
+								"type": "string"
+							},
+							"filterFileRegex": {
+								"description": "Show only if the current file's path matches this regex.\nRequires double escaping\n\nExample: \".*\\.ext\"",
+								"type": "string"
+							},
+							"filterLanguageRegex": {
+								"description": "Show only if current file's language matches this regex.\nRequires double escaping\n\nExample: \"markdown\"",
+								"type": "string"
+							},
+							"filterWorskspaceFileRegex": {
+								"description": "Show only if a file's path that matches this regex is found in the workspace.\nRequires double escaping\n\nExample: \"**/.*\\.ext\"",
+								"type": "string"
+							},
+							"priority": {
+								"default": 0,
+								"description": "The priority of this item. Higher value means the item should be shown more to the left",
+								"type": "number"
+							},
+							"text": {
+								"description": "The text to show for the entry",
+								"type": "string"
+							},
+							"tooltip": {
+								"description": "The tooltip text when you hover over this item",
+								"type": "string"
+							}
+						},
+						"required": [
+							"text",
+							"command"
+						],
+						"type": "object"
+					}
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "commands.editConfig",
+				"title": "Commands: Edit Configuration"
+			},
+			{
+				"command": "commands.refresh",
+				"title": "Commands: Refresh"
+			}
+		],
+		"languages": [
+			{
+				"id": "jsonc",
+				"extensions": [
+					"commands.json"
+				]
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "commands.json",
+				"url": "./commands.schema.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "rm -rf out && webpack --mode production",
+		"publish": "vsce publish && npm publish",
+		"compile": "webpack --mode development",
+		"compile:watch": "webpack --mode development --watch",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"bugs": {
+		"url": "https://github.com/fabiospampinato/vscode-commands/issues"
+	},
+	"author": {
+		"name": "Fabio Spampinato",
+		"email": "spampinabio@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fabiospampinato/vscode-commands.git"
+	},
+	"engines": {
+		"vscode": "^1.21.0"
+	},
+	"keywords": [
+		"vscode",
+		"vsc",
+		"extension",
+		"commands",
+		"statusbar"
+	],
+	"categories": [
+		"Other"
+	],
+	"dependencies": {
+		"@types/node": "^10.12.8",
+		"absolute": "0.0.1",
+		"conf-merge": "^1.0.0",
+		"json5": "^0.5.1",
+		"lodash": "^4.17.4",
+		"mkdirp": "^0.5.1",
+		"pify": "^3.0.0"
+	},
+	"devDependencies": {
+		"ts-loader": "^5.2.1",
+		"typescript": "~2.4.1",
+		"vscode": "^1.1.4",
+		"webpack": "^4.20.2",
+		"webpack-cli": "^3.1.2"
+	},
+	"__metadata": {
+		"id": "721aa8b5-801a-4113-a23d-c72651da702c",
+		"publisherId": "4288bdb9-145e-438b-ab6b-4a6839ee9c6f",
+		"publisherDisplayName": "Fabio Spampinato"
+	}
+}

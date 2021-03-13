@@ -1,6 +1,5 @@
 APP_DIR=/opt
-path+=$APP_DIR/homebrew/bin/
-export PATH
+export PATH=$APP_DIR/homebrew/bin:$PATH
 
 eval "$(pyenv init -)"
 
@@ -10,11 +9,11 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export PYTHONIOENCODING=utf-8
 export VISUAL=code
 
-powerline-daemon -q
+~/.local/bin/powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-POWERLINE_CONFIG_COMMAND=~/.pyenv/shims/powerline-config
-. ~/.pyenv/versions/3.7.4/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+export POWERLINE_CONFIG_COMMAND=~/.local/bin/powerline-config
+. ~/.local/lib/python3.9/site-packages/powerline/bindings/shell/powerline.sh
 
 alias c="clear"
 alias cl="clear"

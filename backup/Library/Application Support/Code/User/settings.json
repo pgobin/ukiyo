@@ -3,9 +3,8 @@
   "editor.fontFamily":"SFMono Nerd Font Mono",
   "editor.fontSize":15,
   "workbench.sideBar.location":"right",
-  "workbench.colorTheme":"Ukiyo Dark",
-  "workbench.panel.defaultLocation":"right",
-  "workbench.iconTheme":null,
+  "workbench.colorTheme":"Cyberpunk 2077 rebuild",
+  "workbench.panel.defaultLocation": "right",
   "editor.lineNumbers":"interval",
   "editor.minimap.enabled":true,
   "editor.renderWhitespace":"boundary",
@@ -17,8 +16,7 @@
   "editor.minimap.maxColumn":140,
   "editor.minimap.side":"left",
   "trailing-spaces.trimOnSave":true,
-  "files.trimTrailingWhitespace":true,
-  "breadcrumbs.enabled":false,
+  "files.trimTrailingWhitespace": true,
   "extensions.ignoreRecommendations":true,
   "zenMode.centerLayout":false,
   "zenMode.restore":true,
@@ -66,9 +64,8 @@
   "javascript.implicitProjectConfig.experimentalDecorators":true,
   "editor.renderControlCharacters":false,
   "workbench.tips.enabled":false,
-  "editor.detectIndentation":false,
-  "search.location":"sidebar",
-  "window.zoomLevel":-1.9,
+  "editor.detectIndentation": false,
+  "window.zoomLevel":-2,
   "editor.rulers":[
     80
   ],
@@ -114,5 +111,13 @@
   "terminal.integrated.cursorStyle":"line",
   "sync.forceUpload":true,
   "terminal.integrated.fontSize":13,
-  "sync.quietSync":true
+  "sync.quietSync": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": null
 }
