@@ -1,0 +1,14 @@
+on:
+  issues:
+    types: [milestoned]
+jobs:
+  Move_Milestoned_Issue_On_Project_Board:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.Project_Milestone }}"
+        project-url: "https://github.com/GoogleCloudPlatform/cloud-code-vscode-internal/projects/8"
+        column-name: "Accepted"
+        milestone-name: "Theia GA (v1.5.x) Release"
+        columns-to-ignore: "In Progress, Done"

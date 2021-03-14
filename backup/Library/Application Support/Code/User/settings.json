@@ -1,27 +1,56 @@
 {
   "editor.tabSize":2,
   "editor.fontFamily":"SFMono Nerd Font Mono",
-  "editor.fontSize":15,
-  "workbench.sideBar.location":"right",
+  "editor.fontSize": 18,
   "workbench.colorTheme":"Cyberpunk 2077 rebuild",
   "workbench.panel.defaultLocation": "right",
   "editor.lineNumbers":"interval",
   "editor.minimap.enabled":true,
-  "editor.renderWhitespace":"boundary",
+  "editor.renderWhitespace":"selection",
   "workbench.statusBar.visible":true,
   "workbench.editor.labelFormat":"medium",
   "workbench.editor.tabSizing":"shrink",
   "workbench.startupEditor":"newUntitledFile",
   "files.insertFinalNewline":true,
-  "editor.minimap.maxColumn":140,
-  "editor.minimap.side":"left",
+  "editor.minimap.maxColumn": 140,
   "trailing-spaces.trimOnSave":true,
   "files.trimTrailingWhitespace": true,
   "extensions.ignoreRecommendations":true,
   "zenMode.centerLayout":false,
-  "zenMode.restore":true,
-  "diffEditor.renderSideBySide":false,
+  "zenMode.restore": true,
   "workbench.colorCustomizations":{
+    "terminal.background":"#000000",
+    "terminal.foreground":"#E0E0E0",
+    "terminalCursor.background":"#E0E0E0",
+    "terminalCursor.foreground":"#E0E0E0",
+    "terminal.ansiBlack":"#000000",
+    "terminal.ansiBlue":"#6FB3D2",
+    "terminal.ansiBrightBlack":"#B0B0B0",
+    "terminal.ansiBrightBlue":"#6FB3D2",
+    "terminal.ansiBrightCyan":"#76C7B7",
+    "terminal.ansiBrightGreen":"#A1C659",
+    "terminal.ansiBrightMagenta":"#D381C3",
+    "terminal.ansiBrightRed":"#FB0120",
+    "terminal.ansiBrightWhite":"#FFFFFF",
+    "terminal.ansiBrightYellow":"#FDA331",
+    "terminal.ansiCyan":"#76C7B7",
+    "terminal.ansiGreen":"#A1C659",
+    "terminal.ansiMagenta":"#D381C3",
+    "terminal.ansiRed":"#FB0120",
+    "terminal.ansiWhite":"#E0E0E0",
+    "terminal.ansiYellow":"#FDA331",
+    "[Cyberpunk 2077 rebuild]":{
+      "activityBar.background":"#000000",
+      "diffEditor.insertedTextBackground":"#9eff9917",
+      "diffEditor.removedTextBackground":"#ff868619",
+      "diffEditor.insertedTextBorder":"#00d4b169",
+      "diffEditor.removedTextBorder":"#00d4b169",
+      "editor.background": "#000000",
+      "minimap.background": "#000000",
+      "editorGutter.background": "#000000",
+      "sideBar.background": "#000000",
+      "sideBar.border": "#00d4b1",
+    },
     "[Kay Dark]":{
       "editor.background":"#020304",
       "editorRuler.foreground":"#33354749",
@@ -61,11 +90,10 @@
   "editor.overviewRulerBorder":false,
   "workbench.activityBar.visible":true,
   "javascript.updateImportsOnFileMove.enabled":"never",
-  "javascript.implicitProjectConfig.experimentalDecorators":true,
+  "js/ts.implicitProjectConfig.experimentalDecorators":true,
   "editor.renderControlCharacters":false,
   "workbench.tips.enabled":false,
   "editor.detectIndentation": false,
-  "window.zoomLevel":-2,
   "editor.rulers":[
     80
   ],
@@ -82,7 +110,7 @@
   ],
   "gitlens.currentLine.enabled":false,
   "gitlens.hovers.currentLine.over":"line",
-  "gitlens.mode.active":"annotate",
+  "gitlens.mode.active":"zen",
   "gitlens.modes":{
     "annotate":{
       "name":"Annotating",
@@ -103,8 +131,8 @@
   "editor.tabCompletion":"on",
   "workbench.editor.closeEmptyGroups":false,
   "sync.gist":"f02ee2da3018699f0ccc68f8915b8368",
-  "git-graph.dateFormat":"Relative",
-  "git-graph.fetchAndPrune":true,
+  "git-graph.date.format":"Relative",
+  "git-graph.repository.fetchAndPrune":true,
   "git.alwaysSignOff":true,
   "git.autoRepositoryDetection":false,
   "terminal.integrated.fontFamily":"SFMono Nerd Font Mono",
@@ -119,5 +147,38 @@
     }
   ],
   "breadcrumbs.enabled": false,
-  "workbench.iconTheme": null
+  "workbench.iconTheme": null,
+  "workbench.editor.enablePreview": false,
+  "diffEditor.renderSideBySide": false,
+  "window.zoomLevel": -3,
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "default-0",
+          "commands": [""]
+        },
+        {
+          "name": "default-1",
+          "commands": [""]
+        },
+        {
+          "name": "default-2",
+          "commands": ["mem"]
+        }
+      ]
+    }
+  ],
+  "terminal.integrated.confirmOnExit": true,
+  "gitlens.views.fileHistory.avatars": false,
+  "gitlens.views.tags.avatars": false,
+  "workbench.sideBar.location": "right",
+  "editor.minimap.side": "left",
+  "git-graph.defaultColumnVisibility": {
+    "Date": false,
+    "Author": false,
+    "Commit": false
+  },
+  "git-graph.openNewTabEditorGroup": "Two",
+  "editor.minimap.scale": 2
 }

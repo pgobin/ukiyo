@@ -1,0 +1,86 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: managedcertificates.networking.gke.io
+spec:
+  group: networking.gke.io
+  names:
+    kind: ManagedCertificate
+    plural: managedcertificates
+    shortNames:
+    - mcrt
+    singular: managedcertificate
+  scope: Namespaced
+  versions:
+  - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        properties:
+          spec:
+            properties:
+              domains:
+                items:
+                  maxLength: 63
+                  pattern: ^(([a-zA-Z0-9]+|[a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9])\.)+[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9]\.?$
+                  type: string
+                maxItems: 1
+                type: array
+          status:
+            properties:
+              certificateName:
+                type: string
+              certificateStatus:
+                type: string
+              domainStatus:
+                items:
+                  properties:
+                    domain:
+                      type: string
+                    status:
+                      type: string
+                  required:
+                  - domain
+                  - status
+                  type: object
+                type: array
+              expireTime:
+                format: date-time
+                type: string
+    served: true
+    storage: false
+  - name: v1beta2
+    schema:
+      openAPIV3Schema:
+        properties:
+          spec:
+            properties:
+              domains:
+                items:
+                  maxLength: 63
+                  pattern: ^(([a-zA-Z0-9]+|[a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9])\.)+[a-zA-Z][-a-zA-Z0-9]*[a-zA-Z0-9]\.?$
+                  type: string
+                maxItems: 100
+                type: array
+          status:
+            properties:
+              certificateName:
+                type: string
+              certificateStatus:
+                type: string
+              domainStatus:
+                items:
+                  properties:
+                    domain:
+                      type: string
+                    status:
+                      type: string
+                  required:
+                  - domain
+                  - status
+                  type: object
+                type: array
+              expireTime:
+                format: date-time
+                type: string
+    served: true
+    storage: true

@@ -1,19 +1,21 @@
 APP_DIR=/opt
-export PATH=$APP_DIR/homebrew/bin:$PATH
+APP_DIR_PYENV=/Users/pgobin/.local
 
-eval "$(pyenv init -)"
+export PATH=$APP_DIR/homebrew/bin:$PATH
+export PATH=$APP_DIR/minikube/bin:$PATH
+export PATH=$APP_DIR_PYENV/bin:$PATH
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$"
 export PYTHONIOENCODING=utf-8
 export VISUAL=code
+export POWERLINE_CONFIG_COMMAND=$APP_DIR_PYENV/bin/powerline-config
+export POWERLINE_REPOSITORY_ROOT=$APP_DIR_PYENV/lib/python3.9/site-packages
 
-~/.local/bin/powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-export POWERLINE_CONFIG_COMMAND=~/.local/bin/powerline-config
-. ~/.local/lib/python3.9/site-packages/powerline/bindings/shell/powerline.sh
+eval "$(pyenv init -)"
+. $POWERLINE_REPOSITORY_ROOT/powerline/bindings/zsh/powerline.zsh
+. $APP_DIR/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 alias c="clear"
 alias cl="clear"
@@ -45,7 +47,9 @@ alias apt-get="brew"
 alias yum="brew"
 
 alias renew=". ~/.zprofile"
+alias zp="code ~/.zprofile"
 alias mem="ps -Ao command,pid,%mem,%cpu,rss,start,time -mc | peco"
 alias backup="mackup -f backup"
+alias vtop="vtop --theme=seti"
 
-weather() { curl wttr.in/"$1"?0; }
+weather() { curl "wttr.in/"$1"?format=3" }

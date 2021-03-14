@@ -1,0 +1,30 @@
+# This workflow runs npm audit fix and sends a PR
+name: NPM audit fix autorun
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Runs 6:00 AM PST every Monday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    if: ${{ github.repository == 'GoogleCloudPlatform/cloud-code-vscode-internal' }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs `npm audit fix` command
+      - name: Run npm audit fix
+        run: npm audit fix
+
+      # Sends a pull request
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          reviewers: redborian
+          draft: false
+          title: "[Bot] Ran npm audit fix"
+          labels: autosquash
+          body: |
+            Ran `npm audit fix` and attached the changes to this PR

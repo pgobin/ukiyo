@@ -1,0 +1,105 @@
+
+DONE: add flows.knative.dev
+
+--
+
+Teach code to carry provenance data:
+GetCrdFilesBySearch needs to return an object that has the content and its provenance.
+GetExactFiles
+And propagate to ExtractObjectsFromYamlFile(content)
+When serializing an object, put the metadata in comments at the top.
+
+
+meta to include
+repo url.
+verfied license or lack thereof.
+g, v, k?
+date fetched
+
+So they can be taken away from their groupdefs and make sense.
+-----
+
+Add Search support for samples.
+Handle multiple sample versions.
+----
+
+Move CRD and CR parsing tools that work on objects into one file with unit tests.
+Move Github stuff into another file with regression test.
+
+---
+
+Teach Fetch to fetch from a github release tarball or gs:// tarball.
+And also the license reason into each CRD file.
+
+---
+
+Don't require apigroup in the pathname.  Allow any path.
+Get the group from the groupdef.yaml
+
+---
+
+Support list of groups in the groupdef.yaml.
+
+---
+
+Coalesce dirs with the same repo into single groupdefs.
+
+---
+DONE all:
+Teach Validate to validate samples.
+Teach Fetch to also fetch samples.
+Test with Istio exactpaths.
+
+---
+
+
+
+Support download from github release and gs bucket.
+Use for:
+https://github.com/projectcalico/calico/releases/latest
+cnrm.
+
+Need to verify the license somehow.
+Asked cnaryan on how to handle.
+
+---
+DONE: Prune the goals of the collection CL to exclude lame stuff, and update the description to focus on a few key things.
+---
+NEED internal source for this data:
+Or to ask them to publish to a private Github Project.
+
+app.gke.io
+configmanagement.gke.io
+---
+
+restructure the zoo so that:
+
+Reorg so that it is by data/$PROJECT/groupdef.yaml
+
+Within a project, there is only one source to pull from, and one license.
+A project can have:
+- CRDs from one or more apigroups.
+and/or
+- CRs from one or more apigroups.
+---
+
+add apigroup suffix to CRD and CR files. so someone can group them all into one directory.
+
+---
+Typically, but not enforced, is that crds for single apigroup are not spread across projects.
+Run validate as a presubmit or robot.
+---
+
+Collect samples:
+- auto when the sample file exact path is known and same repo.
+- search when that is known and same repo.
+- manual when the samples are elsewhere, like KCC.
+  or config management.
+
+
+
+
+Plan to Mirror zoo structure in testdata (or at least zoo and internal)
+
+Run a fork on git-on-borg that pulls from the zoo, and adds in internal projects?  and has an internal fetch tool?
+

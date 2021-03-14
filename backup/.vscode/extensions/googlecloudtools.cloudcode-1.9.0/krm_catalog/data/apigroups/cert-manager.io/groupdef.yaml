@@ -1,0 +1,10 @@
+apiVersion: krm-zoo.erictune.github.io/v1
+kind: ApiGroupSnapshotSpec
+spec:
+  groupNames: ["cert-manager.io"]
+  repoUrl: https://github.com/jetstack/cert-manager
+  strategy: github
+status:
+  howAdded: fetchedFromGithub
+  lastModifiedDate: '2020-02-27'
+  license: apache-2.0
